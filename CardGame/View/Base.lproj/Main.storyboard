@@ -210,11 +210,20 @@
                                     <action selector="flippedCard:" destination="xUb-5D-ZKX" eventType="touchUpInside" id="PNo-l8-rER"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1I-ab-h7A">
+                                <rect key="frame" x="145" y="490" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset Game"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="xUb-5D-ZKX" eventType="touchUpInside" id="iIQ-yH-f5a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="X0f-9v-skL"/>
                     </view>
                     <connections>
+                        <outlet property="resetGameButton" destination="E1I-ab-h7A" id="frm-qg-etD"/>
                         <outletCollection property="allCardButtons" destination="085-XY-8q8" collectionClass="NSMutableArray" id="xaj-yj-mUN"/>
                         <outletCollection property="allCardButtons" destination="nGf-Bx-cLc" collectionClass="NSMutableArray" id="HE4-mP-PJR"/>
                         <outletCollection property="allCardButtons" destination="s7F-v5-lGJ" collectionClass="NSMutableArray" id="h5y-Bx-ISG"/>

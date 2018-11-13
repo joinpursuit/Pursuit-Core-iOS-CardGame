@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct ThreeCardMonteImageString {
+struct ThreeCardMonteImageName {
   static let threeCard = "threeCard"
   static let kingCard = "kingCard"
 }
 
-// final indicates no other class can inherit from ThreeCardMonte
+// final indicates no other class can subclass ThreeCardMonte
 final class ThreeCardMonte: Card {
   // properties
   var image: UIImage
@@ -31,9 +31,9 @@ final class ThreeCardMonte: Card {
     for index in 1...numberOfCards {
       var card: ThreeCardMonte!
       if index == 1 {
-        card = ThreeCardMonte(image: UIImage(named: ThreeCardMonteImageString.kingCard)!, isWinningCard: true)
+        card = ThreeCardMonte(image: UIImage(named: ThreeCardMonteImageName.kingCard)!, isWinningCard: true)
       } else {
-        card = ThreeCardMonte(image: UIImage(named: ThreeCardMonteImageString.threeCard)!, isWinningCard: false)
+        card = ThreeCardMonte(image: UIImage(named: ThreeCardMonteImageName.threeCard)!, isWinningCard: false)
       }
       cards.append(card)
     }

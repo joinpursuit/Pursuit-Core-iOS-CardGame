@@ -14,7 +14,7 @@ class ThreeCardMonteController: UIViewController {
   @IBOutlet weak var winningStatusLabel: UILabel!
   @IBOutlet weak var newGameButton: UIButton!
   
-  // data
+  // getting data from the ThreeCardMonte model
   var cards = ThreeCardMonte.getCards(numberOfCards: 3)
   
   override func viewDidLoad() {
@@ -27,7 +27,7 @@ class ThreeCardMonteController: UIViewController {
     allCardButtons[cardButton.tag].setImage(card.image, for: .normal)
     if !card.isWinningCard {
       for (index, card) in cards.enumerated() {
-        if card.image == UIImage(named: ThreeCardMonteImageString.kingCard) {
+        if card.image == UIImage(named: ThreeCardMonteImageName.kingCard) {
           allCardButtons[index].setImage(card.image, for: .normal)
           break
         }
@@ -40,8 +40,9 @@ class ThreeCardMonteController: UIViewController {
   @IBAction func newGame(_ newGameButton: UIButton) {
     winningStatusLabel.text = "Pick a card"
     cards = cards.shuffled()
-    allCardButtons.forEach { $0.isEnabled = true }
-    allCardButtons.forEach { $0.setImage(UIImage(named: "cardBackRed"), for: .normal) }
+    for cardButton in allCardButtons {
+      cardButton.isEnabled = true
+      cardButton.setImage(UIImage(named: "cardBackRed"), for: .normal)
+    }
   }
-
 }
