@@ -14,7 +14,7 @@ class MatchingGameController: UIViewController {
   @IBOutlet weak var resetGameButton: UIButton!
   
   // getting data from the MatchingGame model
-  private var cards = MatchingGame.getCards()
+  private var cards: [MatchingGame]!
   
   // using a computed property when our cardPair array has a count of 2, we check if it's a matching pair
   var cardPair = [MatchingGame]() {
@@ -71,7 +71,7 @@ class MatchingGameController: UIViewController {
   }
   
   @IBAction func resetGame(_ resetGameButton: UIButton) {
-    cards = cards.shuffled()
+    cards = MatchingGame.getCards().shuffled()
     for (index, cardButton) in allCardButtons.enumerated() {
       cards[index].tag = index
       cardButton.tag = index
