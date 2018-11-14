@@ -20,11 +20,13 @@ class ThreeCardMonteController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     cards = cards.shuffled()
+    title = "Three Card Monte"
   }
 
   @IBAction func flippedCard(_ cardButton: UIButton) {
-    let card = cards[cardButton.tag]
+    let card = cards[cardButton.tag] // cards[0] cards[1] cards[2]
     allCardButtons[cardButton.tag].setImage(card.image, for: .normal)
+    // if lost flip the king
     if !card.isWinningCard {
       for (index, card) in cards.enumerated() {
         if card.image == UIImage(named: ThreeCardMonteImageName.kingCard) {

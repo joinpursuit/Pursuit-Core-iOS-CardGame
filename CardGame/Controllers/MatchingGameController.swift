@@ -14,7 +14,7 @@ class MatchingGameController: UIViewController {
   @IBOutlet weak var resetGameButton: UIButton!
   
   // getting data from the MatchingGame model
-  var cards = MatchingGame.getCards()
+  private var cards = MatchingGame.getCards()
   
   // using a computed property when our cardPair array has a count of 2, we check if it's a matching pair
   var cardPair = [MatchingGame]() {
@@ -26,6 +26,7 @@ class MatchingGameController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     resetGame(resetGameButton)
+    title = "Matching Game"
   }
   
   @IBAction func flippedCard(_ cardButton: UIButton) {
@@ -76,6 +77,7 @@ class MatchingGameController: UIViewController {
       cardButton.tag = index
       cardButton.isEnabled = true
       cardButton.setImage(UIImage(named: MatchingGameName.pokemonCardBack), for: .normal)
+      cardPair.removeAll()
     }
   }
 }

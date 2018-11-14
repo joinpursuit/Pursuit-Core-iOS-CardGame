@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MatchingGameName {
+public struct MatchingGameName {
   static let pokemonCardBack = "pokemonCardBack"
 }
 
@@ -20,7 +20,8 @@ enum Pokemon: String, CaseIterable {
   case pokemonCardRed
   case pokemonCardYellowBlack
   
-  func image() -> UIImage {
+  // instance
+  public func image() -> UIImage {
     var cardImage: UIImage!
     switch self {
     case .pokemonCardBlueRed:

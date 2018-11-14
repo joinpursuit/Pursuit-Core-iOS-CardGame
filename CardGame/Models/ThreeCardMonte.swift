@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ThreeCardMonteImageName {
+public struct ThreeCardMonteImageName {
   static let threeCard = "threeCard"
   static let kingCard = "kingCard"
 }
@@ -29,7 +29,7 @@ final class ThreeCardMonte: Card {
   static func getCards(numberOfCards: Int) -> [ThreeCardMonte] {
     var cards = [ThreeCardMonte]()
     for index in 1...numberOfCards {
-      var card: ThreeCardMonte!
+      var card: ThreeCardMonte! // implicit unwrap
       if index == 1 {
         card = ThreeCardMonte(image: UIImage(named: ThreeCardMonteImageName.kingCard)!, isWinningCard: true)
       } else {
